@@ -76,15 +76,16 @@
 </head>
 <body>
     <h1>Ajude eu, minha mãe e meu irmãozinho!</h1>
-    <h2>Escolha um número disponível e entre em contato comigo pelo (47) 99121-1500</h2>
+    <h2>Escolha um número disponível, clique nele e você será redirecionado para o whatsapp 😊</h2>
     <h3>CADA NÚMERO CUSTA R$30,00</h3>
-    <p>Quem comprar estará concorrendo a um **TEMPRA 1995 16V 2.0** (Ou 5 mil no PIX )! O valor arrecadado será usado para comprar os óculos do meu irmãozinho, que tem autismo, os óculos da minha mãe e um computador de estudos para mim.</p>
+    <p>Quem comprar estará concorrendo a um <b><u><i>TEMPRA 1995 16V 2.0</i></u></b> (Ou 5 mil no PIX)! O valor arrecadado será usado para comprar os óculos do meu irmãozinho, que tem autismo, os óculos da minha mãe e um computador de estudos para mim.</p>
+    <div class="container" id="container"></div>
     <div class="container" id="container"></div>
     <img src="Tempra.jpeg" alt="Foto do carro Tempra" title="Tempra 1995 16V 2.0">
 
     <script>
         const container = document.getElementById('container');
-        const soldNumbers = [1, 3, 5, 7, 10, 11, 15, 17, 22, 25, 30, 75, 136, 137];
+        const soldNumbers = [1, 3, 4, 5, 7, 10, 11, 12, 13, 15, 17, 22, 23, 25, 26, 30, 47, 67, 75, 132, 136, 137, 200, 295, 298, 410, 429];
 
         for (let i = 1; i <= 500; i++) {
             const circle = document.createElement('div');
@@ -94,6 +95,13 @@
             if (soldNumbers.includes(i)) {
                 circle.classList.add('sold');
                 circle.textContent = `${i} ✖`;
+            } else {
+                // Adiciona link para o WhatsApp
+                circle.addEventListener('click', () => {
+                    const message = `Olá, gostaria de comprar o número ${i} da rifa. Ainda está disponível?`;
+                    const whatsappURL = `https://wa.me/5547991211500?text=${encodeURIComponent(message)}`;
+                    window.open(whatsappURL, '_blank');
+                });
             }
 
             container.appendChild(circle);
