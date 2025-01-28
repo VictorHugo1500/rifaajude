@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números da Rifa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        h2 {
+            color: #34495e;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        h3 {
+            color: #e74c3c;
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        p {
+            color: #2c3e50;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            max-width: 600px;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+            gap: 10px;
+            max-width: 90%;
+            margin-bottom: 30px;
+        }
+        .circle {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            background-color: #4caf50;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+        .circle.sold {
+            background-color: #e74c3c;
+            cursor: not-allowed;
+        }
+        .circle:hover:not(.sold) {
+            transform: scale(1.1);
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>Ajude eu, minha mãe e meu irmãozinho!</h1>
+    <h2>Escolha um número disponível e entre em contato comigo pelo (47) 99121-1500</h2>
+    <h3>CADA NÚMERO CUSTA R$30,00</h3>
+    <p>Quem comprar estará concorrendo a um **TEMPRA 1995 16V 2.0** (Ou 5 mil no PIX )! O valor arrecadado será usado para comprar os óculos do meu irmãozinho, que tem autismo, os óculos da minha mãe e um computador de estudos para mim.</p>
+    <div class="container" id="container"></div>
+    <img src="Tempra.jpeg" alt="Foto do carro Tempra" title="Tempra 1995 16V 2.0">
+
+    <script>
+        const container = document.getElementById('container');
+        const soldNumbers = [1, 3, 5, 7, 10, 11, 15, 17, 22, 25, 30, 75, 136, 137];
+
+        for (let i = 1; i <= 500; i++) {
+            const circle = document.createElement('div');
+            circle.className = 'circle';
+            circle.textContent = i;
+
+            if (soldNumbers.includes(i)) {
+                circle.classList.add('sold');
+                circle.textContent = `${i} ✖`;
+            }
+
+            container.appendChild(circle);
+        }
+    </script>
+</body>
+</html>
