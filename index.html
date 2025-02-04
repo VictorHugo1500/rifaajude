@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Números da Rifa</title>
+    <title>Rifa Solidária - Concorra a R$5.000</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -13,49 +13,48 @@
             justify-content: center;
             min-height: 100vh;
             margin: 0;
-            background-color: #f4f4f4;
+            background-color: #1e1e2f;
             text-align: center;
             padding: 20px;
+            color: #fff;
         }
         h1 {
-            color: #2c3e50;
-            font-size: 2.5rem;
-            margin-bottom: 10px;
+            color: #f1c40f;
+            font-size: 2.8rem;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
         }
         h2 {
-            color: #34495e;
-            font-size: 1.5rem;
-            margin-bottom: 20px;
+            color: #ecf0f1;
+            font-size: 1.8rem;
         }
         h3 {
             color: #e74c3c;
-            font-size: 1.2rem;
-            margin-bottom: 30px;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
         }
         p {
-            color: #2c3e50;
-            font-size: 1rem;
-            margin-bottom: 20px;
+            font-size: 1.2rem;
             max-width: 600px;
+            margin-bottom: 20px;
         }
         .container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
             gap: 10px;
             max-width: 90%;
             margin-bottom: 30px;
         }
         .circle {
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
             display: flex;
             justify-content: center;
             align-items: center;
             border-radius: 50%;
-            background-color: #4caf50;
+            background-color: #27ae60;
             color: white;
             font-weight: bold;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
             cursor: pointer;
             transition: transform 0.2s, background-color 0.2s;
         }
@@ -66,26 +65,33 @@
         .circle:hover:not(.sold) {
             transform: scale(1.1);
         }
-        img {
-            max-width: 100%;
-            height: auto;
+        .highlight {
+            background-color: yellow;
+            color: #000;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .instructions {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
             border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 10px;
+            font-size: 1rem;
         }
     </style>
 </head>
 <body>
-    <h1>Ajude eu, minha mãe e meu irmãozinho!</h1>
-    <h2>Escolha um número disponível, clique nele e você será redirecionado para o whatsapp 😊</h2>
-    <h3>CADA NÚMERO CUSTA R$10,00</h3>
-    <p>Quem comprar estará concorrendo a um <b><u><i>TEMPRA 1995 16V 2.0</i></u></b> (Ou 5 mil no PIX)! O valor arrecadado será usado para comprar os óculos do meu irmãozinho, que tem autismo, os óculos da minha mãe e um computador de estudos para mim.</p>
+    <h1>Rifa Solidária - Concorra a <span class="highlight">R$5.000</span></h1>
+    <h2>Ajude uma família e tenha a chance de ganhar!</h2>
+    <h3>Cada número custa apenas R$10,00</h3>
+    <p>Meu nome é Victor, tenho 17 anos e sonho em estudar Programação e Inteligência Artificial. Meu irmão de 14 anos tem autismo e precisa de óculos novos (ele usa cerca de 4 graus), e minha mãe, que nos cria sozinha, também precisa de óculos. Para conseguirmos esse valor, criamos esta rifa solidária.</p>
+    <p>Participe e concorra a <b>R$5.000 no PIX</b>. Escolha seu número e clique para comprar pelo WhatsApp!</p>
+    <div class="instructions">Clique em um número disponível para ser redirecionado ao WhatsApp e garantir sua participação.</div>
     <div class="container" id="container"></div>
-    <div class="container" id="container"></div>
-    <img src="Tempra.jpeg" alt="Foto do carro Tempra" title="Tempra 1995 16V 2.0">
-
     <script>
         const container = document.getElementById('container');
-        const soldNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 57, 67, 68, 69, 75, 76, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 195, 198, 199, 200, 222, 258, 295, 296, 297, 298, 299, 356, 410, 427, 428, 429, 457];
+        const soldNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 59, 61, 62, 63, 64, 65, 67, 68, 69, 72, 75, 76, 77, 78, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 193, 195, 196, 195, 198, 199, 200, 202, 203, 205, 206, 207, 208, 209, 222, 258, 295, 296, 297, 298, 299, 356, 360, 410, 415, 427, 428, 429, 457]; // Exemplo de números vendidos
 
         for (let i = 1; i <= 1500; i++) {
             const circle = document.createElement('div');
@@ -96,7 +102,6 @@
                 circle.classList.add('sold');
                 circle.textContent = `${i} ✖`;
             } else {
-                // Adiciona link para o WhatsApp
                 circle.addEventListener('click', () => {
                     const message = `Olá, gostaria de comprar o número ${i} da rifa. Ainda está disponível?`;
                     const whatsappURL = `https://wa.me/5547991211500?text=${encodeURIComponent(message)}`;
